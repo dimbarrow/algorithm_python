@@ -5,4 +5,6 @@ def two_sum(nums, target):
             return [d_dict[target - nums[i]], i]
         d_dict[nums[i]] = i
 
+    return None
+
 print(two_sum([2,7,11,15], 9))
