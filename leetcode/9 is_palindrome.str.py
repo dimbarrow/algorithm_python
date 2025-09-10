@@ -6,6 +6,3 @@ def isPalindrome(self, x):
             return False
 
     return True
-
-
-print()
