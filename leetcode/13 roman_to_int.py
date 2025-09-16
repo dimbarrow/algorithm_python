@@ -5,12 +5,12 @@ def romanToInt(s):
     for i in range(len(s)):
         s_int += s_nums[s[i]]
 
-    for i in range(0, len(s), 2):
-        if i in s_nums_n:
-            s_int -= s_nums_n[s[i]]
-
+    for i in range(len(s)-1):
+        combine = s[i] + s[i+1]
+        if combine in s_nums_n:
+            s_int -= s_nums_n[combine]
 
     return s_int
 
 
-print(romanToInt('IV'))
+print(romanToInt('XIX'))
