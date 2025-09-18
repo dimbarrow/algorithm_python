@@ -1,23 +1,23 @@
 def longestCommonPrefix(strs):
     minimum = strs[0]
+    ind_min = 0
     for i in range(len(strs)-1):
-        print(1)
-        print(len(strs[i]))
-        print(len(strs[i+1]))
         if len(strs[i]) < len(strs[i + 1]):
             minimum = strs[i]
+            ind_min = i
         else:
             minimum = strs[i+1]
+            ind_min = i
     print(minimum)
 
     new_strs = ""
     for i in range(len(minimum)):
-        for g in range(len(strs)-1):
-            if strs[g][i] != strs[i][i]:
+        for k in range(len(strs)):
+            if strs[k][i] != strs[ind_min][i]:
                 return new_strs
-        new_strs += strs[i][i]
+        new_strs += strs[ind_min][i]
 
     return new_strs
 
 
-print(longestCommonPrefix(["a"]))
+print(longestCommonPrefix(["caa","","a","acb"]))
