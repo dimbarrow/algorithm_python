@@ -1,44 +1,23 @@
 def longestCommonPrefix(strs):
-    st = set()
-
-
-    if strs == [""]:
-        return ""
-
-    for i in range(len(strs)):
-        if strs[i] == "":
-            return ""
-
-    for i in range(len(strs)):
-        st.add(strs[i][0])
-
-    if len(st) != 1:
-        return ""
-
-    st = set()
-    minim = strs[0]
+    minimum = strs[0]
     for i in range(len(strs)-1):
-        if len(strs[i]) > len(strs[i+1]):
-            minim = strs[i+1]
-
-    maxim = 0
-    for i in range(len(strs)-1):
+        print(1)
+        print(len(strs[i]))
+        print(len(strs[i+1]))
         if len(strs[i]) < len(strs[i + 1]):
-            maxim = i+1
-
-    counter = 0
-    for i in range(len(minim)):
-        for g in range(len(strs)):
-            st.add(strs[g][i])
-            print(st)
-        if len(st) == i + 1:
-            counter += 1
-        elif len(st) != i + 1:
-            return strs[maxim][:counter]
+            minimum = strs[i]
         else:
-            return strs[0]
+            minimum = strs[i+1]
+    print(minimum)
 
-    return strs[maxim][:counter]
+    new_strs = ""
+    for i in range(len(minimum)):
+        for g in range(len(strs)-1):
+            if strs[g][i] != strs[i][i]:
+                return new_strs
+        new_strs += strs[i][i]
+
+    return new_strs
 
 
-print(longestCommonPrefix(["a","a","a"]))
+print(longestCommonPrefix(["a"]))
