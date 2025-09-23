@@ -9,7 +9,7 @@ def longestCommonPrefix(strs):
     new_strs = ""
     for i in range(len(minimum)):
         for k in range(len(strs)):
-            if strs[k][i] != strs[i][i]:
+            if strs[k][i] != strs[0][i]:
                 return new_strs
         new_strs += strs[ind_min][i]
 
