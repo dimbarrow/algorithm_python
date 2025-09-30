@@ -4,27 +4,18 @@ def isValid(s):
 
     open = ['(', '{', '[']
     close = [')', '}', ']']
-    a = '()'
-    b = '{}'
-    c = '[]'
     s_new = list()
     for i in range(len(s)):
         if s[i] in close:
-            if len(s_new) == 0:
-                return False
-            print(close.index(s[i]))
-            print(open.index(s_new[len(s_new)-1]))
-            print(s[i])
-            print(s_new[len(s_new)-1])
-            if close.index(s[i]) == open.index(s_new[len(s_new)-1]):
+            if close.index(s[i]) == open.index(s_new[-1]):
                 s_new.pop()
             else:
                 return False
-        else:
+        elif s[i] in open:
             s_new.append(s[i])
         print(s_new)
-        if len(s_new) == 0 and i == len(s)-1:
-            return True
+    if len(s_new) == 0 and i == len(s)-1:
+        return True
 
     return False
 
