@@ -30,7 +30,11 @@ def removeDuplicates2(nums):
             nums[k] = nums[g]
         g+=1
 
-    return nums, k
+    if len(nums) > 1:
+        for i2 in range(k + 1, len(nums)-1):
+            nums[i2] = '_'
+
+    return k+1
 
 
-print(removeDuplicates2([1,1,2]))
+print(removeDuplicates2([1]))
