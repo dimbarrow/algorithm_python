@@ -9,17 +9,12 @@ def lengthOfLongestSubstring(s):
         if s[first] not in substring:
             substring.add(s[first])
             first += 1
-            print('байден')
-            print(substring)
         else:
             maxi = max(maxi, len(substring))
-            print('обама')
-            print(maxi)
             substring.remove(s[second])
             second += 1
-            print('трамп')
-            print(substring)
 
+    maxi = max(maxi, len(substring))
     return maxi
 
 
