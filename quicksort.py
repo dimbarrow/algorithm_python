@@ -5,7 +5,7 @@ def quicksort(lst):
         num = lst[0]
         less = [i for i in lst[1:] if i < num]
 
-        more = [i for i in lst[1:] if i > num]
+        more = [i for i in lst[1:] if i >= num]
 
         return quicksort(less) + [num] + quicksort(more)
 
