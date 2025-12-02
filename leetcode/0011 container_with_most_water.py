@@ -9,7 +9,7 @@ def maxArea(height):
         if height[left] < height[right]:
             left += 1
         else:
-            right = right - 1
+            right -= 1
 
     return V_max
 
