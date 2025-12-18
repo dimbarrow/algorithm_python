@@ -1,8 +1,10 @@
 from itertools import combinations
 def subsets(nums):
-    subset = list()
-    for i in range(len(nums)+1):
-        subset.append(list(combinations(nums, i)))
+    subset = [[]]
+    for i in range(1, len(nums)+1):
+        print(subset)
+        subset += list(combinations(nums, i))
+
 
     return subset
 
