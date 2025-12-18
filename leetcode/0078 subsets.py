@@ -5,7 +5,6 @@ def subsets(nums):
         print(subset)
         subset += list(combinations(nums, i))
 
-
     return subset
 
 
