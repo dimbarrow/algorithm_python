@@ -9,5 +9,19 @@ def climbStairs(n):
 
     return st[-1]
 
+print(climbStairs(6))
 
-print(climbStairs(5))
+def climbingStairs_noLists(n):
+    if n <= 2:
+        return n
+    first = 1
+    second = 1
+    local = 0
+    for i in range(n):
+        local = first
+        first = first+second
+        second = local
+
+    return local
+
+print(climbingStairs_noLists(6))
