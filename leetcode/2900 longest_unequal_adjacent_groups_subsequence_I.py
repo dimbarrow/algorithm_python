@@ -1,20 +1,23 @@
-from pkgutil import walk_packages
-
-
 def getLongestSubsequence(words, groups):
+    if len(words) <= 1:
+        return words
+
     lst = list()
-    for i in range(len(groups)-1):
+    for i in range(len(words)-1):
         if groups[i] != groups[i+1]:
-            lst.append(i)
+            lst.append(words.index(words[i]))
+            lst.append(words.index(words[i+1]))
 
-    counter = 0
     print(lst)
-    for i in range(len(lst)-1):
-        if lst[i] < lst[i+1] and lst[i+1]-lst[i] == 1:
-            counter += 1
-        else:
-            break
+    st = set()
+    for i in range(len(lst)):
+        st.add(lst[i])
+    st = list(st)
+    return_lst = list()
+    for i in range(len(st)):
+        return_lst.append(words[st[i]])
 
-    return words[:counter]
+    if len(return_lst) == 0:
+        return [words[0]]
 
-print(getLongestSubsequence(["a","b","c","d"], [1,0,1,1]))
+    return return_lst
